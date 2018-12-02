@@ -75,12 +75,6 @@ class hpsdr_multirx(gr.top_block, Qt.QWidget):
             self.restoreGeometry(self.settings.value("geometry", type=QtCore.QByteArray))
 
         ##################################################
-        # Variables
-        ##################################################
-        self.timestamp_iso  = timestamp_iso = datetime.utcnow().isoformat()+"Z"
-        self.file_stamp     = file_stamp    = datetime.now().strftime("%Y.%m.%d.%H.%M.%S")
-
-        ##################################################
         # Blocks
         ##################################################
         

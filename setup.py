@@ -9,5 +9,6 @@ setup(name='AntarcticRx',
       author_email='nathaniel.a.frissell@njit.edu',
       url='https://github.com/w2naf/antarcticrx',
       packages=['antarcticrx'],
-      scripts=['scripts/run_rx.py','scripts/start_rx.py','scripts/start_ringbuffer.py']
+      scripts=['scripts/rx_recorder.py','scripts/start_rx.py',
+               'scripts/start_ringbuffer.py','scripts/gps_recorder.py']
      )
