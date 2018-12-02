@@ -2,15 +2,17 @@
 # Written by Dan Mandle http://dan.mandle.me September 2012
 # Modified by Nathaniel Frissell December 2018
 # License: GPL 2.0
- 
+
 import os
+import datetime
 from gps import *
 from time import *
 import time
 import threading
+import numpy as np
 
 from antarcticrx.config import working_dir
-sleep_secs  = 5
+sleep_secs  = 300
 
 outdir  = os.path.join(working_dir,'gps_data')
 if not os.path.exists(outdir):
@@ -73,9 +75,14 @@ if __name__ == '__main__':
 #      print
 #      print 'sats        ' , gpsd.satellites
 
-      pline('{!s},{!s},{!s}'.format(gpsd.fix.utc,gps.fix.latitude,gps.fix.longitude))
+      gtime,lat,lon = (gpsd.fix.time,gpsd.fix.latitude,gpsd.fix.longitude)
+      pline('{!s},{!s},{!s}'.format(gtime,lat,lon))
  
-      time.sleep(sleep_secs) #set to whatever
+      # Poll faster if we don't have a GPS lock.
+      if str(gtime) == 'nan':
+        time.sleep(5) #set to whatever
+      else:
+        time.sleep(sleep_secs) #set to whatever
  
   except (KeyboardInterrupt, SystemExit): #when you press ctrl+c
     print "\nKilling Thread..."
