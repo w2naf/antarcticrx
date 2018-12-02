@@ -40,9 +40,10 @@ import sys
 from gnuradio import qtgui
 
 from antarcticrx.config import rxs,rx_samp_rate,working_dir,metadata
+data_dir = os.path.join(working_dir,'hf_data')
 
-if not os.path.exists(working_dir):
-    os.makedirs(working_dir)
+if not os.path.exists(data_dir):
+    os.makedirs(data_dir)
 
 class hpsdr_multirx(gr.top_block, Qt.QWidget):
 
@@ -96,7 +97,7 @@ class hpsdr_multirx(gr.top_block, Qt.QWidget):
 
         self.gr_digital_rf_digital_rf_sink_0 = \
             gr_digital_rf.digital_rf_sink(
-                working_dir,
+                data_dir,
                 channels=channels,
                 dtype=np.complex64,
                 subdir_cadence_secs=3600,

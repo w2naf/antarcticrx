@@ -10,5 +10,5 @@ rxs.append({'label': 'WWV_10050', 'frequency': 10.050e6})
 rx_samp_rate    = 192000
 metadata        = {'call':'W2NAF','grid':'<6-digit-grid>','rx':'Red Pitaya','ant':'DXE RF-PRO-1B'}
 
-working_dir     = "/media/icerx/icerx/hf_data/"
+working_dir     = "/media/icerx/icerx/"
 ringbuffer_size = '800GB'
