@@ -14,11 +14,10 @@ import numpy as np
 from antarcticrx.config import working_dir
 sleep_secs  = 300
 
-data_dir = os.path.join(working_dir)
-if not os.path.exists(data_dir):
-    os.makedirs(data_dir)
+if not os.path.exists(working_dir):
+    os.makedirs(working_dir)
 
-outfile = os.path.join(outdir,'gps.csv')
+outfile = os.path.join(working_dir,'gps.csv')
  
 gpsd = None #seting the global variable
  

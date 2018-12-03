@@ -8,7 +8,7 @@ rxs.append({'label': 'HAM_14096', 'frequency': 14.096e6})
 rxs.append({'label': 'WWV_10050', 'frequency': 10.050e6})
 
 rx_samp_rate    = 192000
-metadata        = {'call':'W2NAF','grid':'<6-digit-grid>','rx':'Red Pitaya','ant':'DXE RF-PRO-1B'}
+metadata        = {'station':'MCM','rx':'Red Pitaya','ant':'DXE RF-PRO-1B'}
 
-working_dir     = "/media/icerx/icerx/hf_data"
-ringbuffer_size = '800GB'
+working_dir     = "/media/icerx/ICERX/hf_data"
+ringbuffer_size = '900GB'
