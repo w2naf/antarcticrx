@@ -40,8 +40,8 @@ import sys
 from gnuradio import qtgui
 
 from antarcticrx.config import rxs,rx_samp_rate,working_dir,metadata
-data_dir = os.path.join(working_dir,'hf_data')
 
+data_dir = os.path.join(working_dir)
 if not os.path.exists(data_dir):
     os.makedirs(data_dir)
 
