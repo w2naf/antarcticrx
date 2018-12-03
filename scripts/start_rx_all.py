@@ -1,6 +1,14 @@
 #!/usr/bin/env python
 import os
 from antarcticrx.config import working_dir, ringbuffer_size
+import time
+
+sleep_time = 15
+for x in range(sleep_time):
+    print 'Starting Antarctic Reciever in {!s} seconds...'.format(sleep_time-x)
+    time.sleep(1)
+
+print('Starting Antarctic Reciever Now!!')
 
 def launch_separate_terminal(cmd):
     """Launches a terminal command in a new window."""
