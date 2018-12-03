@@ -84,7 +84,7 @@ class hpsdr_multirx(gr.top_block, Qt.QWidget):
 
         self.add_frequency_display()
 
-        freqs = [0]*7
+        freqs = [int(10e6)]*7
         for rx_id,rx_dct in enumerate(rxs):
             freqs[rx_id]  = int(rx_dct['frequency'])
 
@@ -214,7 +214,7 @@ class hpsdr_multirx(gr.top_block, Qt.QWidget):
                   "magenta", "yellow", "dark red", "dark green", "dark blue"]
         alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
                   1.0, 1.0, 1.0, 1.0, 1.0]
-        for i in xrange(7):
+        for i in xrange(len(rxs)):
             if len(labels[i]) == 0:
                 self.qtgui_freq_sink_x_0.set_line_label(i, "Data {0}".format(i))
             else:
