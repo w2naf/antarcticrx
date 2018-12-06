@@ -41,6 +41,9 @@ from gnuradio import qtgui
 
 from antarcticrx.config import rxs,rx_samp_rate,working_dir,metadata
 
+# Convert receiver list in Hz to a dictionary with labels and frequencies.
+rxs = [{'label':'{:.0f}'.format(x),'frequency':x} for x in rxs]
+
 data_dir = os.path.join(working_dir)
 if not os.path.exists(data_dir):
     os.makedirs(data_dir)
@@ -107,7 +110,8 @@ class hpsdr_multirx(gr.top_block, Qt.QWidget):
                 start="nowish", ignore_tags=False,
                 is_complex=True, num_subchannels=1,
                 uuid_str=None if ''=='' else '',
-                center_frequencies=None if () is () else (),
+#                center_frequencies=None if () is () else (),
+                center_frequencies=freqs[:len(rxs)],
                 metadata=metadata,
                 is_continuous=True, compression_level=0,
                 checksum=False, marching_periods=True,
