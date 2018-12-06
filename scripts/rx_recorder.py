@@ -115,7 +115,7 @@ class hpsdr_multirx(gr.top_block, Qt.QWidget):
                 min_chunksize=None if 0==0 else 0,
             )
 
-        self.analog_sig_source_x_1 = analog.sig_source_c(48000, analog.GR_COS_WAVE, -1000, 0.95, 0)
+        self.analog_sig_source_x_1 = analog.sig_source_c(rx_samp_rate, analog.GR_COS_WAVE, -1000, 0.95, 0)
 
         ##################################################
         # Connections
